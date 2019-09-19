@@ -3,8 +3,8 @@ C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCT
   GameCodeApp.cpp
   Source.cpp
   Generating code
-  14 of 14 functions (100.0%) were compiled.
-    13 functions were new in current compilation
+  2 of 15 functions (13.3%) were compiled, the rest were copied from previous compilation.
+    1 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   InfiniteEngine.vcxproj -> C:\Users\Esk Eve\Documents\GitHub\Game3121-GameEngine\GAME3121_InfiniteEngine\InfiniteEngine\InfiniteEngine\..\..\Game\Win32\Release\InfiniteEngineWin32.exe

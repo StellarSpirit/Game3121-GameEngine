@@ -78,6 +78,7 @@
     <OutDir>..\..\Game\$(Platform)\$(Configuration)</OutDir>
     <IntDir>..\..\Temp\$(Platform)\$(Configuration)</IntDir>
     <TargetName>$(ProjectName)$(Platform)</TargetName>
+    <IncludePath>$(SolutionDir)\Source;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>..\..\Game\$(Platform)\$(Configuration)</OutDir>
@@ -134,11 +135,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Source\GameCodeApp.cpp" />
+    <ClCompile Include="..\Source\GameCodeApp.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Source\GameCodeApp.h" />
+    <ClInclude Include="..\Source\GameCodeApp.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

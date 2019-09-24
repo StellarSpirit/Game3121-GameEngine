@@ -4,6 +4,45 @@ using namespace std;
 GameCodeApp::GameCodeApp()
 {
 	mName = LPCSTR("Infinite Engine");
+	Initialise();
+}
+
+void GameCodeApp::Initialise()
+{
+	if (IsOnlyInstance(mName))
+	{
+		cout << "This is the only instance of window " << mName << endl;
+	}
+	else
+	{
+		cout << "There is another instance of window " << mName << endl;
+	}
+
+	
+
+
+	if (CheckStorage(300000000))
+	{
+		cout << "The computer has sufficient storage space." << endl;
+	}
+	else
+	{
+		cout << "The computer does not have sufficient storage space." << endl;
+	}
+
+	DWORD test = ReadCPUSpeed();
+	cout << "CPU SPEED = " << test << " MHz" << endl;
+
+	//system("PAUSE");
+
+	if (CheckMemory(1, 1))
+	{
+		cout << "There is enough memory available.\n";
+	}
+	else
+	{
+		cout << "There isn't enough memory available.\n";
+	}
 }
 
 bool GameCodeApp::IsOnlyInstance(LPCTSTR gameTitle) {

@@ -2,6 +2,7 @@
 #include "Windows.h"
 #include <stdio.h>
 #include <direct.h>
+#include "iostream"
 
 class GameCodeApp
 {

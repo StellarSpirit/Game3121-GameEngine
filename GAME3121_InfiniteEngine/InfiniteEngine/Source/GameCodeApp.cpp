@@ -1,4 +1,5 @@
 #include "GameCodeApp.h"
+using namespace std;
 
 GameCodeApp::GameCodeApp()
 {
@@ -71,8 +72,9 @@ DWORD GameCodeApp::ReadCPUSpeed() {
 	long lError = RegOpenKeyEx(HKEY_LOCAL_MACHINE, "HARDWARE\\DESCRIPTION\\System\\CentralProcessor\\0",
 		0, KEY_READ, &hKey);
 	if (lError == ERROR_SUCCESS) {
+		//cout << "ERROR SUCCESS" << endl;
 		// query the key:
-		RegQueryValueEx(hKey, "MHz", NULL, &type, (LPBYTE)&dwMHz,
+		RegQueryValueEx(hKey, "~MHz", NULL, &type, (LPBYTE)&dwMHz,
 			&BufSize);
 	}
 	return dwMHz;

@@ -1,9 +1,8 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(376,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
-C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(377,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
-  Source.cpp
-  Generating code
-  1 of 17 functions ( 5.9%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
-  Finished generating code
-  InfiniteEngine.vcxproj -> C:\Users\100978429\Documents\GitHub\Game3121-GameEngine\GAME3121_InfiniteEngine\InfiniteEngine\InfiniteEngine\..\..\Game\Win32\Release\InfiniteEngineWin32.exe
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(376,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(377,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  GameCodeApp.cpp
+c:\users\benef\documents\github\game3121-gameengine\game3121_infiniteengine\infiniteengine\source\gamecodeapp.cpp(57): warning C4244: 'initializing': conversion from 'const DWORDLONG' to 'unsigned int', possible loss of data
+c:\users\benef\documents\github\game3121-gameengine\game3121_infiniteengine\infiniteengine\source\gamecodeapp.cpp(81): error C2440: 'type cast': cannot convert from 'DWORD *' to 'std::string'
+  c:\users\benef\documents\github\game3121-gameengine\game3121_infiniteengine\infiniteengine\source\gamecodeapp.cpp(81): note: No constructor could take the source type, or constructor overload resolution was ambiguous
+c:\users\benef\documents\github\game3121-gameengine\game3121_infiniteengine\infiniteengine\source\gamecodeapp.cpp(81): error C2660: 'RegQueryValueExA': function does not take 5 arguments
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\winreg.h(848): note: see declaration of 'RegQueryValueExA'

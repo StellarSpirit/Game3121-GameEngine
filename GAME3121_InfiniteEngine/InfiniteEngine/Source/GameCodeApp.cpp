@@ -43,15 +43,15 @@ bool GameCodeApp::CheckStorage(const DWORDLONG diskSpaceNeeded) {
 bool GameCodeApp::CheckMemory(const DWORDLONG physicalRAMNeeded, const DWORDLONG virtualRAMNeeded) {
 	MEMORYSTATUSEX status;
 	GlobalMemoryStatusEx(&status);
-	if (status.ullTotalPhys < physicalRAMNeeded) {
+	if (status.ullTotalPhys) {
 		/* You don't have enough physical memory.*/
-		cout << "CheckMemory Failure: Not enough physical memory.";
+		cout << "Total Physical Memory Available:" << status.ullTotalPhys << "\n";
 		return false;
 	}
 	//Check for enough free memory.
-	if (status.ullAvailVirtual < virtualRAMNeeded) {
+	if (status.ullAvailVirtual) {
 		// You don't have enough virtual memory available.
-		cout << "CheckMemory Failure: Not enough virtual memory.";
+		cout << "Total Physical Memory Available:" << status.ullAvailVirtual;
 		return false;
 	}
 	char *buff = new char[virtualRAMNeeded];
@@ -67,6 +67,8 @@ DWORD GameCodeApp::ReadCPUSpeed() {
 	DWORD BufSize = sizeof(DWORD);
 	DWORD dwMHz = 0;
 	DWORD type = REG_DWORD;
+	DWORD type2 = REG_SZ;
+	DWORD processor;
 	HKEY hKey;
 	// open the key where the proc speed is hidden:
 	long lError = RegOpenKeyEx(HKEY_LOCAL_MACHINE, "HARDWARE\\DESCRIPTION\\System\\CentralProcessor\\0",
@@ -76,6 +78,8 @@ DWORD GameCodeApp::ReadCPUSpeed() {
 		// query the key:
 		RegQueryValueEx(hKey, "~MHz", NULL, &type, (LPBYTE)&dwMHz,
 			&BufSize);
+		RegQueryValueEx(hKey, "ProcessorNameString", NULL, &type2, (LPBYTE)&processor,
+			&BufSize);
 	}
-	return dwMHz;
+	return dwMHz, processor;
 }

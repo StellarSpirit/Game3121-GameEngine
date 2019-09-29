@@ -35,7 +35,7 @@ void GameCodeApp::Initialise()
 
 	//system("PAUSE");
 
-	if (CheckMemory(1, 1))
+	if (CheckMemory())
 	{
 		cout << "There is enough memory available.\n";
 	}
@@ -79,27 +79,27 @@ bool GameCodeApp::CheckStorage(const DWORDLONG diskSpaceNeeded) {
 	return true;
 }
 
-bool GameCodeApp::CheckMemory(const DWORDLONG physicalRAMNeeded, const DWORDLONG virtualRAMNeeded) {
+bool GameCodeApp::CheckMemory() {
 	MEMORYSTATUSEX status;
 	GlobalMemoryStatusEx(&status);
-	if (status.ullTotalPhys < physicalRAMNeeded) {
+	//cout << status.ullAvailPhys;
+	if (!status.ullAvailPhys) {
 		/* You don't have enough physical memory.*/
 		cout << "CheckMemory Failure: Not enough physical memory.";
 		return false;
 	}
+	else
+		cout << "Available physical memory: " << status.ullAvailPhys / 1024 << " KB\n";
+
 	//Check for enough free memory.
-	if (status.ullAvailVirtual < virtualRAMNeeded) {
+	if (!status.ullAvailVirtual) {
 		// You don't have enough virtual memory available.
 		cout << "CheckMemory Failure: Not enough virtual memory.";
 		return false;
 	}
-	char *buff = new char[virtualRAMNeeded];
-	if (buff)
-		delete[] buff;
-	else {
-		cout << "CheckMemory Failure: Not enough contiguous memory.";
-		return false;
-	}
+	else
+		cout << "Available virtual memory: " << status.ullAvailVirtual / 1024 << " KB\n";
+
 }
 
 DWORD GameCodeApp::ReadCPUSpeed() {

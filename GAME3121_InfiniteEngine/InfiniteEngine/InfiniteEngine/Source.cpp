@@ -8,14 +8,7 @@ int main()
 	GameCodeApp* gGameCodeApp;
 	gGameCodeApp = new GameCodeApp();
 	
-	if (gGameCodeApp->CheckMemory(1, 1))
-	{
-		cout << "There is enough memory available.\n";
-	}
-	else
-	{
-		cout << "There isn't enough memory available.\n";
-	}
+	gGameCodeApp->CheckMemory();
 
 
 

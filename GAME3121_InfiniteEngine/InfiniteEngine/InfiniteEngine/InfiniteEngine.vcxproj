@@ -139,10 +139,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\GameCodeApp.cpp" />
-    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="..\Source\Source.cpp" />
+    <ClCompile Include="..\Source\SpecialAbilityComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Source\AbilitiesInterface.h" />
     <ClInclude Include="..\Source\GameCodeApp.h" />
+    <ClInclude Include="..\Source\SpecialAbilityComponent.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

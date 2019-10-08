@@ -16,6 +16,7 @@ void GameCodeApp::Initialise()
 	else
 	{
 		cout << "There is another instance of window " << mName << endl;
+		return;
 	}
 
 	
@@ -48,15 +49,7 @@ void GameCodeApp::Initialise()
 bool GameCodeApp::IsOnlyInstance(LPCTSTR gameTitle) {
 	HANDLE handle = CreateMutex(NULL, TRUE, gameTitle);
 	if (GetLastError() != ERROR_SUCCESS) {
-		HWND hWnd = FindWindow(gameTitle, NULL);
-		if (hWnd) {
-			// An instance of your game is already running.
-			ShowWindow(hWnd, SW_SHOWNORMAL);
-			SetFocus(hWnd);
-			SetForegroundWindow(hWnd);
-			SetActiveWindow(hWnd);
 			return false;
-		}
 	}
 	return true;
 }
@@ -81,6 +74,7 @@ bool GameCodeApp::CheckStorage(const DWORDLONG diskSpaceNeeded) {
 
 bool GameCodeApp::CheckMemory() {
 	MEMORYSTATUSEX status;
+	status.dwLength = sizeof(status);
 	GlobalMemoryStatusEx(&status);
 	//cout << status.ullAvailPhys;
 	if (!status.ullAvailPhys) {
@@ -99,7 +93,7 @@ bool GameCodeApp::CheckMemory() {
 	}
 	else
 		cout << "Available virtual memory: " << status.ullAvailVirtual / 1024 << " KB\n";
-
+	return true;
 }
 
 DWORD GameCodeApp::ReadCPUSpeed() {

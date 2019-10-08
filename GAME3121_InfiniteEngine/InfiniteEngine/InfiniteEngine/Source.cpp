@@ -8,7 +8,7 @@ int main()
 	GameCodeApp* gGameCodeApp;
 	gGameCodeApp = new GameCodeApp();
 	
-	gGameCodeApp->CheckMemory();
+	//gGameCodeApp->CheckMemory();
 
 
 

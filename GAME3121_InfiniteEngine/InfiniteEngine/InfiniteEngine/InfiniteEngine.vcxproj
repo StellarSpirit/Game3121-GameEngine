@@ -136,10 +136,37 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\GameCodeApp.cpp" />
+    <ClCompile Include="AIComponent.cpp" />
+    <ClCompile Include="AttackComponent.cpp" />
+    <ClCompile Include="ChargeAttackComponent.cpp" />
+    <ClCompile Include="CollisionComponent.cpp" />
+    <ClCompile Include="DamagePickupComponent.cpp" />
+    <ClCompile Include="HealthPickupComponent.cpp" />
+    <ClCompile Include="PhysicsComponentInterface.cpp" />
+    <ClCompile Include="PickupComponentInterface.cpp" />
+    <ClCompile Include="PlayerCharacterComponentInterface.cpp" />
+    <ClCompile Include="PlayerInputComponent.cpp" />
+    <ClCompile Include="PortalComponent.cpp" />
+    <ClCompile Include="ProjectileComponentInterface.cpp" />
+    <ClCompile Include="RenderComponentInterface.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="SpecialAttackComponent.cpp" />
+    <ClCompile Include="SpecialAttackPickupComponent.cpp" />
+    <ClCompile Include="StageComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Source\GameCodeApp.h" />
+    <ClInclude Include="AIComponent.h" />
+    <ClInclude Include="AttackComponent.h" />
+    <ClInclude Include="ChargeAttackComponent.h" />
+    <ClInclude Include="CollisionComponent.h" />
+    <ClInclude Include="DamagePickupComponent.h" />
+    <ClInclude Include="HealthPickupComponent.h" />
+    <ClInclude Include="PlayerInputComponent.h" />
+    <ClInclude Include="PortalComponent.h" />
+    <ClInclude Include="SpecialAttackComponent.h" />
+    <ClInclude Include="SpecialAttackPickupComponent.h" />
+    <ClInclude Include="StageComponent.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

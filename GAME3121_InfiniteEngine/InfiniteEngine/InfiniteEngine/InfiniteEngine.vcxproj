@@ -136,8 +136,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\GameCodeApp.cpp" />
+    <ClCompile Include="ActorComponent.cpp" />
     <ClCompile Include="AIComponent.cpp" />
     <ClCompile Include="AttackComponent.cpp" />
+    <ClCompile Include="AudioComponent.cpp" />
     <ClCompile Include="ChargeAttackComponent.cpp" />
     <ClCompile Include="CollisionComponent.cpp" />
     <ClCompile Include="DamagePickupComponent.cpp" />
@@ -156,8 +158,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Source\GameCodeApp.h" />
+    <ClInclude Include="ActorComponent.h" />
     <ClInclude Include="AIComponent.h" />
     <ClInclude Include="AttackComponent.h" />
+    <ClInclude Include="AudioComponent.h" />
     <ClInclude Include="ChargeAttackComponent.h" />
     <ClInclude Include="CollisionComponent.h" />
     <ClInclude Include="DamagePickupComponent.h" />

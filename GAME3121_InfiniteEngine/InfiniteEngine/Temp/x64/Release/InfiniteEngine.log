@@ -1,10 +1,15 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(376,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
-C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(377,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(376,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(377,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
   Source.cpp
-  SpecialAbilityComponent.cpp
+c:\users\benef\documents\github\game3121-gameengine\game3121_infiniteengine\infiniteengine\source\source.cpp(57): warning C4302: 'type cast': truncation from 'LPSTR' to 'WORD'
+c:\users\benef\documents\github\game3121-gameengine\game3121_infiniteengine\infiniteengine\source\source.cpp(62): warning C4302: 'type cast': truncation from 'LPSTR' to 'WORD'
+c:\users\benef\documents\github\game3121-gameengine\game3121_infiniteengine\infiniteengine\source\source.cpp(165): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\benef\documents\github\game3121-gameengine\game3121_infiniteengine\infiniteengine\source\source.cpp(270): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\benef\documents\github\game3121-gameengine\game3121_infiniteengine\infiniteengine\source\source.cpp(286): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+c:\users\benef\documents\github\game3121-gameengine\game3121_infiniteengine\infiniteengine\source\source.cpp(145): warning C4101: 'msg': unreferenced local variable
   Generating code
-  1 of 18 functions ( 5.6%) were compiled, the rest were copied from previous compilation.
+  2 of 19 functions (10.5%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
-  InfiniteEngine.vcxproj -> C:\Users\100978429\Documents\GitHub\Game3121-GameEngine\GAME3121_InfiniteEngine\InfiniteEngine\InfiniteEngine\..\Game\x64\Release\InfiniteEnginex64.exe
+  InfiniteEngine.vcxproj -> C:\Users\benef\Documents\GitHub\Game3121-GameEngine\GAME3121_InfiniteEngine\InfiniteEngine\InfiniteEngine\..\Game\x64\Release\InfiniteEnginex64.exe

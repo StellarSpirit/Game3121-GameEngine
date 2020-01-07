@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int main()
+int CALLBACK WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nShowCmd)
 {
 	GameCodeApp* gGameCodeApp;
 	gGameCodeApp = new GameCodeApp();

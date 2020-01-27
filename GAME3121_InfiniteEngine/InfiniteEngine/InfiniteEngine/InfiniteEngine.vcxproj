@@ -138,14 +138,45 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Source\ActorComponent.cpp" />
+    <ClCompile Include="..\Source\AIComponent.cpp" />
+    <ClCompile Include="..\Source\AttackComponent.cpp" />
+    <ClCompile Include="..\Source\AudioComponent.cpp" />
+    <ClCompile Include="..\Source\ChargeAttackComponent.cpp" />
+    <ClCompile Include="..\Source\CollisionComponent.cpp" />
+    <ClCompile Include="..\Source\DamagePickupComponent.cpp" />
     <ClCompile Include="..\Source\GameCodeApp.cpp" />
+    <ClCompile Include="..\Source\HealthPickupComponent.cpp" />
+    <ClCompile Include="..\Source\PhysicsComponentInterface.cpp" />
+    <ClCompile Include="..\Source\PickupComponentInterface.cpp" />
+    <ClCompile Include="..\Source\PlayerCharacterComponentInterface.cpp" />
+    <ClCompile Include="..\Source\PlayerInputComponent.cpp" />
+    <ClCompile Include="..\Source\PortalComponent.cpp" />
+    <ClCompile Include="..\Source\ProjectileComponentInterface.cpp" />
+    <ClCompile Include="..\Source\RenderComponentInterface.cpp" />
     <ClCompile Include="..\Source\Source.cpp" />
     <ClCompile Include="..\Source\SpecialAbilityComponent.cpp" />
+    <ClCompile Include="..\Source\SpecialAttackComponent.cpp" />
+    <ClCompile Include="..\Source\SpecialAttackPickupComponent.cpp" />
+    <ClCompile Include="..\Source\StageComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Source\AbilitiesInterface.h" />
+    <ClInclude Include="..\Source\ActorComponent.h" />
+    <ClInclude Include="..\Source\AIComponent.h" />
+    <ClInclude Include="..\Source\AttackComponent.h" />
+    <ClInclude Include="..\Source\AudioComponent.h" />
+    <ClInclude Include="..\Source\ChargeAttackComponent.h" />
+    <ClInclude Include="..\Source\CollisionComponent.h" />
+    <ClInclude Include="..\Source\DamagePickupComponent.h" />
     <ClInclude Include="..\Source\GameCodeApp.h" />
+    <ClInclude Include="..\Source\HealthPickupComponent.h" />
+    <ClInclude Include="..\Source\PlayerInputComponent.h" />
+    <ClInclude Include="..\Source\PortalComponent.h" />
     <ClInclude Include="..\Source\SpecialAbilityComponent.h" />
+    <ClInclude Include="..\Source\SpecialAttackComponent.h" />
+    <ClInclude Include="..\Source\SpecialAttackPickupComponent.h" />
+    <ClInclude Include="..\Source\StageComponent.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

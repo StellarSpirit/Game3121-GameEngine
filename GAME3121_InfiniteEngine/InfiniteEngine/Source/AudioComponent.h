@@ -1,5 +1,6 @@
 #pragma once
-class AudioComponent
+#include "BaseComponent.h"
+class AudioComponent : BaseComponent
 {
 public:
 	AudioComponent();

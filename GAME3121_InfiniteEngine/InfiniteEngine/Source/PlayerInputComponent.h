@@ -1,7 +1,8 @@
 #pragma once
 #include "PlayerCharacterComponentInterface.cpp"
+#include "BaseComponent.h"
 
-class PlayerInputComponent : PlayerCharacterComponentInterface
+class PlayerInputComponent
 {
 public:
 	PlayerInputComponent();

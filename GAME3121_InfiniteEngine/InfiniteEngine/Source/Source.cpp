@@ -10,9 +10,6 @@ int main()
 	
 	//gGameCodeApp->CheckMemory();
 
-
-
-
 	system("PAUSE");
 	return 0;
 }

@@ -1,7 +1,7 @@
 #include "HealthPickup.h"
 
 
-HealthPickup::Pickup()
+HealthPickup::HealthPickup()
 {
 }
 

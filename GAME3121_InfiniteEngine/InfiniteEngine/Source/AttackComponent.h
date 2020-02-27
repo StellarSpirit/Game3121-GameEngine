@@ -1,7 +1,7 @@
 #pragma once
-#include "ProjectileComponentInterface.cpp"
+#include "BaseComponent.h"
 
-class AttackComponent : ProjectileComponentInterface
+class AttackComponent : BaseComponent
 {
 public:
 	AttackComponent();

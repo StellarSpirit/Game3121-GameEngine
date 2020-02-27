@@ -1,9 +1,9 @@
-//#pragma once
-//#include "Pickup.h"
-//
-//class SpecialAttackPickup : Pickup
-//{
-//public:
-//	SpecialAttackPickup();
-//};
-//
+#pragma once
+#include "Pickup.h"
+
+class SpecialAttackPickup : Pickup
+{
+public:
+	SpecialAttackPickup();
+};
+

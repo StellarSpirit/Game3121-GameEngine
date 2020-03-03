@@ -1,3 +1,4 @@
+#include <SFML/Graphics.hpp>
 #include "GameCodeApp.h"
 using namespace std;
 
@@ -5,6 +6,7 @@ GameCodeApp::GameCodeApp()
 {
 	mName = LPCSTR("Infinite Engine");
 	Initialise();
+	RunEngine();
 }
 
 void GameCodeApp::Initialise()
@@ -111,4 +113,67 @@ DWORD GameCodeApp::ReadCPUSpeed() {
 			&BufSize);
 	}
 	return dwMHz;
+}
+
+void GameCodeApp::RunEngine() {
+	sf::Clock clock;
+	sf::Clock updateClock;
+	bool splashScreenOver = false;
+
+	sf::RenderWindow window(sf::VideoMode(800, 600), "INFINITE ENGINE");
+	sf::CircleShape shape(100.f);
+	shape.setFillColor(sf::Color::Green);
+
+	sf::Time splashScreenDelay = sf::seconds(5.0f);
+	
+	float frameTime = 1.f / 60.f;
+	sf::Time dt = sf::seconds(frameTime);
+
+	sf::Texture splashScreenImage;
+	splashScreenImage.loadFromFile("../Assets/Images/IELogoBlotches.png");
+	sf::Sprite splashScreenSprite;
+	splashScreenSprite.setTexture(splashScreenImage);
+
+	while (window.isOpen())
+	{
+		sf::Event event;
+
+		while (window.pollEvent(event))
+		{
+			if (event.type == sf::Event::Closed)
+				window.close();
+		}
+
+		if (clock.getElapsedTime() > splashScreenDelay && !splashScreenOver)
+		{
+			splashScreenOver = true;
+			updateClock.restart();
+		}
+
+		if (splashScreenOver)
+		{
+			//if (updateClock.getElapsedTime() > sf::seconds(0.016666f))
+			if (updateClock.getElapsedTime() > dt)
+			{
+				Update(updateClock.getElapsedTime().asSeconds());
+				updateClock.restart();
+			}			
+		}
+
+		window.clear();
+		window.draw(shape);
+		if (!splashScreenOver)
+		{
+			window.draw(splashScreenSprite);
+		}
+		
+		window.display();
+
+		
+	}
+}
+
+void GameCodeApp::Update(float deltaTime)
+{
+	cout << deltaTime << endl;
 }

@@ -4,7 +4,7 @@
 int main()
 {
 	GameCodeApp gGameCodeApp = GameCodeApp();
-	sf::Clock clock;
+	/*sf::Clock clock;
 
 	sf::RenderWindow window(sf::VideoMode(800, 600), "INFINITE ENGINE");
 	sf::CircleShape shape(100.f);
@@ -34,7 +34,7 @@ int main()
 		if (clock.getElapsedTime() < splashScreenDelay)
 			window.draw(splashScreenSprite);
 		window.display();
-	}
+	}*/
 
 	
 

@@ -148,6 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\GameCodeApp.cpp" />
+    <ClCompile Include="..\Source\SceneManager.cpp" />
     <ClCompile Include="..\Source\Source.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -155,7 +156,11 @@
     <ClInclude Include="..\Source\Actor.h" />
     <ClInclude Include="..\Source\AIActor.h" />
     <ClInclude Include="..\Source\AttackComponent.h" />
+    <ClInclude Include="..\Source\BaseComponent.h" />
     <ClInclude Include="..\Source\GameCodeApp.h" />
+    <ClInclude Include="..\Source\RenderComponent.h" />
+    <ClInclude Include="..\Source\SceneManager.h" />
+    <ClInclude Include="..\Source\TransformComponent.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

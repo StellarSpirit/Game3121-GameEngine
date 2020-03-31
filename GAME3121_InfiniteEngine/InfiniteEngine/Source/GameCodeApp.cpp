@@ -118,11 +118,42 @@ DWORD GameCodeApp::ReadCPUSpeed() {
 void GameCodeApp::RunEngine() {
 	sf::Clock clock;
 	sf::Clock updateClock;
-	bool splashScreenOver = false;
 
-	sf::RenderWindow window(sf::VideoMode(800, 600), "INFINITE ENGINE");
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
+	bool splashScreenOver = false;
+	sf::Vector2u textureSize;
+	sf::Vector2u windowSize;
+
+	sf::Color gray = sf::Color::Color(sf::Color::Color(125, 125, 125, 255));
+	int initX = 1200;
+	int initY = 800;
+
+	sf::RenderWindow window(sf::VideoMode(initX, initY), "INFINITE ENGINE");
+
+	//sf::Vector2f((window.getSize().x / 4)*2, 0.f)
+
+	//sf::Vector2f windowSize = window.getSize();
+
+	sf::RectangleShape hierarchy;
+	hierarchy.setSize(sf::Vector2f(window.getSize().x / 4, window.getSize().y));
+	hierarchy.setPosition(0.f, 0.f);
+	hierarchy.setFillColor(gray);
+	hierarchy.setOutlineThickness(1.f);
+	hierarchy.setOutlineColor(sf::Color::Black);
+
+	sf::RectangleShape inspector;
+	inspector.setSize(sf::Vector2f(window.getSize().x / 4, window.getSize().y));
+	inspector.setPosition(window.getSize().x - inspector.getSize().x, 0.f);
+	inspector.setFillColor(gray);
+	inspector.setOutlineThickness(1.f);
+	inspector.setOutlineColor(sf::Color::Black);
+	
+	sf::RectangleShape projectExplorer;
+	// Size calculation is assuming hierarchy is on left and inspector on the right
+	projectExplorer.setSize(sf::Vector2f((inspector.getPosition().x) - (hierarchy.getPosition().x + hierarchy.getSize().x), window.getSize().y / 4));
+	projectExplorer.setPosition(hierarchy.getPosition().x + hierarchy.getSize().x, projectExplorer.getSize().y * 3);
+	projectExplorer.setFillColor(gray);
+	projectExplorer.setOutlineThickness(1.f);
+	projectExplorer.setOutlineColor(sf::Color::Black);
 
 	sf::Time splashScreenDelay = sf::seconds(5.0f);
 	
@@ -131,8 +162,17 @@ void GameCodeApp::RunEngine() {
 
 	sf::Texture splashScreenImage;
 	splashScreenImage.loadFromFile("../Assets/Images/IELogoBlotches.png");
+
+	textureSize = splashScreenImage.getSize();
+	windowSize = window.getSize();
+
+	float ScaleX = (float)windowSize.x / textureSize.x;
+	float ScaleY = (float)windowSize.y / textureSize.y;
+
 	sf::Sprite splashScreenSprite;
 	splashScreenSprite.setTexture(splashScreenImage);
+	splashScreenSprite.setScale(ScaleX, ScaleY);
+	
 
 	while (window.isOpen())
 	{
@@ -161,7 +201,10 @@ void GameCodeApp::RunEngine() {
 		}
 
 		window.clear();
-		window.draw(shape);
+		window.draw(hierarchy);
+		window.draw(inspector);
+		window.draw(projectExplorer);
+
 		if (!splashScreenOver)
 		{
 			window.draw(splashScreenSprite);

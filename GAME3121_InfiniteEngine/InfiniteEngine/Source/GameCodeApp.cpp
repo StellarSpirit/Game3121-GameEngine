@@ -1,4 +1,6 @@
 #include <SFML/Graphics.hpp>
+#include <RenderComponent.h>
+#include <TransformComponent.h>
 #include "GameCodeApp.h"
 using namespace std;
 
@@ -160,6 +162,13 @@ void GameCodeApp::RunEngine() {
 	float frameTime = 1.f / 60.f;
 	sf::Time dt = sf::seconds(frameTime);
 
+	Actor actor1;
+	RenderComponent rend;
+	actor1.AddComponent(rend);
+	
+	
+	
+
 	sf::Texture splashScreenImage;
 	splashScreenImage.loadFromFile("../Assets/Images/IELogoBlotches.png");
 
@@ -200,7 +209,9 @@ void GameCodeApp::RunEngine() {
 			}			
 		}
 
+		
 		window.clear();
+		//window.draw(actor1);
 		window.draw(hierarchy);
 		window.draw(inspector);
 		window.draw(projectExplorer);
@@ -220,3 +231,9 @@ void GameCodeApp::Update(float deltaTime)
 {
 	cout << deltaTime << endl;
 }
+
+// Classes for objects need to be made and derive from actor class
+// 
+// Actor can derive from rectangle shape to have a bounding box for its size
+// Render Component needs to hold sprite and texture data for each actor AND be accessible
+// All actors start with a Transform Component, maybe make that derive from Rectangle Shape **

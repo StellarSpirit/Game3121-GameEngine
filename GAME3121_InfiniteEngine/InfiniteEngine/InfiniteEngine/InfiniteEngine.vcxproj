@@ -148,6 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Source\GameCodeApp.cpp" />
+    <ClCompile Include="..\Source\RenderComponentInterface.cpp" />
     <ClCompile Include="..\Source\SceneManager.cpp" />
     <ClCompile Include="..\Source\Source.cpp" />
   </ItemGroup>
@@ -159,6 +160,7 @@
     <ClInclude Include="..\Source\BaseComponent.h" />
     <ClInclude Include="..\Source\GameCodeApp.h" />
     <ClInclude Include="..\Source\RenderComponent.h" />
+    <ClInclude Include="..\Source\RenderComponentInterface.h" />
     <ClInclude Include="..\Source\SceneManager.h" />
     <ClInclude Include="..\Source\TransformComponent.h" />
   </ItemGroup>

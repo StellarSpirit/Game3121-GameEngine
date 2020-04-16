@@ -1,10 +1,12 @@
 #include <SFML/Graphics.hpp>
 #include "GameCodeApp.h"
+#include "SceneManager.h"
 using namespace std;
 
 GameCodeApp::GameCodeApp()
 {
 	mName = LPCSTR("Infinite Engine");
+	mRenderInterface = RenderComponentInterface();
 	Initialise();
 	RunEngine();
 }
@@ -46,6 +48,15 @@ void GameCodeApp::Initialise()
 	{
 		cout << "There isn't enough memory available.\n";
 	}
+
+	mSceneManager = SceneManager();
+	mpSceneManager = &mSceneManager;
+
+	mRenderInterface.mpSceneManager = mpSceneManager;
+
+	mpSceneManager->AddActorToScene("../Assets/Images/IELogoBlotches.png", sf::Vector2f(0.f, 0.f));
+
+	//mRenderInterface.mpSceneManager = mpSceneManager;
 }
 
 bool GameCodeApp::IsOnlyInstance(LPCTSTR gameTitle) {
@@ -195,28 +206,31 @@ void GameCodeApp::RunEngine() {
 			//if (updateClock.getElapsedTime() > sf::seconds(0.016666f))
 			if (updateClock.getElapsedTime() > dt)
 			{
-				Update(updateClock.getElapsedTime().asSeconds());
+				Update(updateClock.getElapsedTime().asSeconds(), &window);
 				updateClock.restart();
 			}			
 		}
 
-		window.clear();
-		window.draw(hierarchy);
-		window.draw(inspector);
-		window.draw(projectExplorer);
+		//window.clear();
+		//window.draw(hierarchy);
+		//window.draw(inspector);
+		//window.draw(projectExplorer);
 
 		if (!splashScreenOver)
 		{
+			window.clear();
 			window.draw(splashScreenSprite);
+			window.display();
 		}
 		
-		window.display();
+		//window.display();
 
 		
 	}
 }
 
-void GameCodeApp::Update(float deltaTime)
+void GameCodeApp::Update(float deltaTime, sf::RenderWindow* lWindow)
 {
 	cout << deltaTime << endl;
+	mRenderInterface.Update(deltaTime, lWindow);
 }

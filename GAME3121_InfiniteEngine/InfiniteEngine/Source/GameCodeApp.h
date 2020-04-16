@@ -4,16 +4,22 @@
 #include <direct.h>
 #include "iostream"
 #include "SceneManager.h"
+#include "RenderComponentInterface.h"
 
 
 class GameCodeApp
 {
+
 public:
+	GameCodeApp();
 	LPCSTR mName;
 
 	SceneManager mSceneManager;
+	SceneManager* mpSceneManager;
 
-	GameCodeApp();
+	RenderComponentInterface mRenderInterface;
+
+	
 
 	void Initialise();
 	bool IsOnlyInstance(LPCTSTR gameTitle);
@@ -21,7 +27,7 @@ public:
 	bool CheckMemory();
 	DWORD ReadCPUSpeed();
 	void RunEngine();
-	void Update(float deltaTime);
+	void Update(float deltaTime, sf::RenderWindow* window);
 
 	
 
